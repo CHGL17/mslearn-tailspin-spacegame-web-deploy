@@ -1,6 +1,9 @@
 trigger:
 - '*'
 
+pool:
+  name: default
+
 variables:
   buildConfiguration: 'Release'
 
