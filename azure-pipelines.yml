@@ -5,9 +5,9 @@ variables:
   buildConfiguration: 'Release'
 
 pool:
-  name: default
+  name: NameOfYourPool
   demands:
-    - Agent.Name -equals DESKTOP-A2V09LL
+   - agent.name -equals DESKTOP-A2V09LL
 
 stages:
 - stage: 'Build'
