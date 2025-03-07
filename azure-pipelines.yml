@@ -1,9 +1,6 @@
 trigger:
 - '*'
-pool:
-  name: Default
-  demands:
-   - agent.name -equals DESKTOP-A2V09LL
+pool: Default
 
 variables:
   buildConfiguration: 'Release'
@@ -11,10 +8,6 @@ variables:
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
-  pool:
-    name: Default
-    demands:
-     - agent.name -equals DESKTOP-A2V09LL
 
   jobs: 
   - job: 'Build'
