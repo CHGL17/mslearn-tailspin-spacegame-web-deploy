@@ -1,15 +1,17 @@
 trigger:
 - '*'
 
-pool:
-  name: default
-
 variables:
   buildConfiguration: 'Release'
 
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
+  pool:
+    name: default
+    demands:
+      - Agent.Name -equals DESKTOP-A2V09LL
+
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
