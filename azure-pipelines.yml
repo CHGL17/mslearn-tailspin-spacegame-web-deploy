@@ -1,6 +1,9 @@
 trigger:
 - '*'
-pool: Default
+pool:
+  name: Default
+  demands:
+   - agent.name -equals DESKTOP-A2V09LL
 
 variables:
   buildConfiguration: 'Release'
@@ -8,14 +11,14 @@ variables:
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
+  pool:
+    name: Default
+    demands:
+     - agent.name -equals DESKTOP-A2V09LL
 
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
-    pool:
-      vmImage: 'ubuntu-20.04'
-      demands:
-      - npm
 
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
